@@ -67,10 +67,6 @@ const PagesRoutes = [
     layout: 'BlankLayout'
   },
   {
-    path: '/pages/profile',
-    component: lazy(() => import('../../views/pages/profile'))
-  },
-  {
     path: '/pages/faq',
     component: lazy(() => import('../../views/pages/faq'))
   },
@@ -141,10 +137,6 @@ const PagesRoutes = [
     path: '/pages/subjects/editNew',
     exact: true,
     component: () => <Redirect to='/pages/subjects/editNew/1' />
-  },
-  {
-    path: '/pages/pricing',
-    component: lazy(() => import('../../views/pages/pricing'))
   },
   {
     path: '/misc/coming-soon',
