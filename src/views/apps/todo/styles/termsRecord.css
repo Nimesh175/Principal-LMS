@@ -1,0 +1,41 @@
+.my-custom-scrollbar {
+     position: relative;
+     height: 250px;
+     overflow: auto;
+     border-bottom: 1px solid slateblue;
+     }
+     .table-wrapper-scroll-y {
+     display: block;
+     }
+
+     .myScrollContainer {
+          height : 270px;
+          
+     }
+     .myTableHead {
+          background: linear-gradient(to top left, #008083 0%, #42a0a3 100%);
+     }
+
+     .myScrollContainer__table-row {
+          height : 30px;
+          padding-top : 4px;
+     }
+
+     .footer_container {
+          width : 300px;
+          height : 100px
+      
+     }
+     .myTable {
+          /* border-bottom: 1px solid red; */
+     }
+
+     .myBtn {
+          height : 35px
+     }
+
+     ::-webkit-scrollbar {
+          width: 0px; 
+          background: transparent;
+      }
+          
