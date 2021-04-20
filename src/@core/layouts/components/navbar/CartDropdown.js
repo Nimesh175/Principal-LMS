@@ -12,7 +12,6 @@ import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem, Media, Badge, But
 
 // ** Store & Actions
 import { useDispatch, useSelector } from 'react-redux'
-import { getCartItems, deleteCartItem, getProduct } from '@src/views/apps/ecommerce/store/actions'
 
 const CartDropdown = () => {
   // ** State
@@ -20,7 +19,6 @@ const CartDropdown = () => {
 
   // ** Store Vars
   const dispatch = useDispatch()
-  const store = useSelector(state => state.ecommerce)
 
   // ** ComponentDidMount
   useEffect(() => {

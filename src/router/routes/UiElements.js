@@ -30,10 +30,6 @@ const UiElementRoutes = [
     component: lazy(() => import('../../views/ui-elements/cards/analytics'))
   },
   {
-    path: '/cards/action',
-    component: lazy(() => import('../../views/ui-elements/cards/actions'))
-  },
-  {
     path: '/components/alerts',
     component: lazy(() => import('../../views/components/alerts'))
   },
