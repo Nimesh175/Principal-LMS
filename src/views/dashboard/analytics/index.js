@@ -1,16 +1,12 @@
 import { useContext } from 'react'
-import { List } from 'react-feather'
 import { kFormatter } from '@utils'
 import Avatar from '@components/avatar'
-import Timeline from '@components/timeline'
 import AvatarGroup from '@components/avatar-group'
 import jsonImg from '@src/assets/images/icons/json.png'
 import InvoiceList from '@src/views/apps/invoice/list'
 import ceo from '@src/assets/images/portrait/small/avatar-s-9.jpg'
 import { ThemeColors } from '@src/utility/context/ThemeColors'
-import Sales from '@src/views/ui-elements/cards/analytics/Sales'
 import AvgSessions from '@src/views/ui-elements/cards/analytics/AvgSessions'
-import CardAppDesign from '@src/views/ui-elements/cards/advance/CardAppDesign'
 import SupportTracker from '@src/views/ui-elements/cards/analytics/SupportTracker'
 import { Row, Col, Card, CardHeader, CardTitle, CardBody, Media } from 'reactstrap'
 import OrdersReceived from '@src/views/ui-elements/cards/statistics/OrdersReceived'
@@ -102,13 +98,6 @@ const AnalyticsDashboard = () => {
         metaClassName: 'mr-1',
         customContent: <AvatarGroup data={avatarGroupArr} />
       }
-      // {
-      //   title: 'Create a new project for client',
-      //   content: 'Add files to new design folder',
-      //   color: 'danger',
-      //   meta: '',
-      //   metaClassName: 'mr-1'
-      // }
     ]
 
   return (
@@ -147,27 +136,6 @@ const AnalyticsDashboard = () => {
 
       </Row>
 
-      {/* <Row className='match-height'>
-        <Col lg='4' xs='12'>
-          <Card className='card-user-timeline'>
-            <CardHeader>
-              <div className='d-flex align-items-center'>
-                <List className='user-timeline-title-icon' />
-                <CardTitle tag='h4'>User Timeline</CardTitle>
-              </div>
-            </CardHeader>
-            <CardBody>
-              <Timeline className='ml-50 mb-0' data={data} />
-            </CardBody>
-          </Card>
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <Sales primary={colors.primary.main} info={colors.info.main} />
-        </Col>
-        <Col lg='4' md='6' xs='12'>
-          <CardAppDesign />
-        </Col>
-      </Row>   */}
       <Row className='match-height'>
         <Col xs='12'>
           <InvoiceList />

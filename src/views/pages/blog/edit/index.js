@@ -111,13 +111,6 @@ const BlogEdit = () => {
           <Col sm='12'>
             <Card>
               <CardBody>
-                {/* <Media>
-                  <Avatar className='mr-75' img={data.avatar} width='38' height='38' />
-                  <Media body>
-                    <h6 className='mb-25'>{data.userFullName}</h6>
-                    <CardText>{data.createdTime}</CardText>
-                  </Media>
-                </Media> */}
                 <h1 style={{fontSize: 22}}>Subjects</h1>
                 <Form className='mt-2' onSubmit={e => e.preventDefault()}>
                   <Row>
@@ -165,67 +158,6 @@ const BlogEdit = () => {
                       </FormGroup>
                     </Col>
                     
-                    {/* <Col md='6'>
-                      <FormGroup className='mb-2'>
-                        <Label for='blog-edit-slug'>Slug</Label>
-                        <Input id='blog-edit-slug' value={slug} onChange={e => setSlug(e.target.value)} />
-                      </FormGroup>
-                    </Col>
-                    <Col md='6'>
-                      <FormGroup className='mb-2'>
-                        <Label for='blog-edit-status'>Status</Label>
-                        <Input
-                          type='select'
-                          id='blog-edit-status'
-                          value={status}
-                          onChange={e => setStatus(e.target.value)}
-                        >
-                          <option value='Published'>Published</option>
-                          <option value='Pending'>Pending</option>
-                          <option value='Draft'>Draft</option>
-                        </Input>
-                      </FormGroup>
-                    </Col> */}
-                    {/* <Col sm='12'>
-                      <FormGroup className='mb-2'>
-                        <Label>Content</Label>
-                        <Editor editorState={content} onEditorStateChange={data => setContent(data)} />
-                      </FormGroup>
-                    </Col>
-                    <Col className='mb-2' sm='12'>
-                      <div className='border rounded p-2'>
-                        <h4 className='mb-1'>Featured Image</h4>
-                        <Media className='flex-column flex-md-row'>
-                          <img
-                            className='rounded mr-2 mb-1 mb-md-0'
-                            src={featuredImg}
-                            alt='featured img'
-                            width='170'
-                            height='110'
-                          />
-                          <Media body>
-                            <small className='text-muted'>Required image resolution 800x400, image size 10mb.</small>
-
-                            <p className='my-50'>
-                              <a href='/' onClick={e => e.preventDefault()}>
-                                {`C:/fakepath/${imgPath}`}
-                              </a>
-                            </p>
-                            <div className='d-inline-block'>
-                              <FormGroup className='mb-0'>
-                                <CustomInput
-                                  type='file'
-                                  id='exampleCustomFileBrowser'
-                                  name='customFile'
-                                  onChange={onChange}
-                                  accept='.jpg, .png, .gif'
-                                />
-                              </FormGroup>
-                            </div>
-                          </Media>
-                        </Media>
-                      </div>
-                    </Col> */}
                     <Col className='mt-50'>
                       <Button.Ripple color='primary' className='mr-1'>
                         Save

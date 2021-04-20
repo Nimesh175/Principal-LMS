@@ -9,14 +9,6 @@ import { Row, Col } from 'reactstrap'
 import { Chart } from 'react-chartjs-2'
 
 // ** Charts
-import BarChart from './ChartjsBarChart'
-import LineChart from './ChartjsLineChart'
-import AreaChart from './ChartjsAreaChart'
-import RadarChart from './ChartjsRadarChart'
-import BubbleChart from './ChartjsBubbleChart'
-import ScatterChart from './ChartjsScatterChart'
-import DoughnutChart from './ChartjsDoughnutChart'
-import PolarAreaChart from './ChartjsPolarAreaChart'
 import HorizontalBarChart from './ChartjsHorizontalBar'
 
 // ** Custom Hooks
@@ -34,19 +26,7 @@ const ChartJS = () => {
     [skin, setSkin] = useSkin(),
     labelColor = skin === 'dark' ? '#b4b7bd' : '#6e6b7b',
     tooltipShadow = 'rgba(0, 0, 0, 0.25)',
-    gridLineColor = 'rgba(200, 200, 200, 0.2)',
-    lineChartPrimary = '#666ee8',
-    lineChartDanger = '#ff4961',
-    warningColorShade = '#ffe802',
-    warningLightColor = '#FDAC34',
-    successColorShade = '#28dac6',
-    primaryColorShade = '#836AF9',
-    infoColorShade = '#299AFF',
-    yellowColor = '#ffe800',
-    greyColor = '#4F5D70',
-    blueColor = '#2c9aff',
-    blueLightColor = '#84D0FF',
-    greyLightColor = '#EDF1F4'
+    gridLineColor = 'rgba(200, 200, 200, 0.2)'
 
   // ** To Set Border Radius On Mount
   useEffect(() => {
@@ -184,12 +164,12 @@ const ChartJS = () => {
           </p>
         </Col>
         <Col xl='6' sm='12'>
-          <BarChart
+          {/* <BarChart
             successColorShade={successColorShade}
             labelColor={labelColor}
             tooltipShadow={tooltipShadow}
             gridLineColor={gridLineColor}
-          />
+          /> */}
         </Col>
         <Col xl='6' sm='12'>
           <HorizontalBarChart
@@ -200,20 +180,20 @@ const ChartJS = () => {
           />
         </Col>
         <Col sm='12'>
-          <LineChart
+          {/* <LineChart
             warningColorShade={warningColorShade}
             lineChartDanger={lineChartDanger}
             lineChartPrimary={lineChartPrimary}
             labelColor={labelColor}
             tooltipShadow={tooltipShadow}
             gridLineColor={gridLineColor}
-          />
+          /> */}
         </Col>
         <Col lg='6' sm='12'>
           <RadarChart labelColor={labelColor} tooltipShadow={tooltipShadow} gridLineColor={gridLineColor} />
         </Col>
         <Col lg='6' sm='12'>
-          <PolarAreaChart
+          {/* <PolarAreaChart
             primary={colors.primary.main}
             labelColor={labelColor}
             primaryColorShade={primaryColorShade}
@@ -222,44 +202,44 @@ const ChartJS = () => {
             greyColor={greyColor}
             successColorShade={successColorShade}
             tooltipShadow={tooltipShadow}
-          />
+          /> */}
         </Col>
         <Col sm='12'>
-          <BubbleChart
+          {/* <BubbleChart
             labelColor={labelColor}
             primaryColorShade={primaryColorShade}
             warningColorShade={warningColorShade}
             tooltipShadow={tooltipShadow}
             gridLineColor={gridLineColor}
-          />
+          /> */}
         </Col>
         <Col lg='4' sm='12'>
-          <DoughnutChart
+          {/* <DoughnutChart
             tooltipShadow={tooltipShadow}
             successColorShade={successColorShade}
             warningLightColor={warningLightColor}
             primary={colors.primary.main}
-          />
+          /> */}
         </Col>
         <Col lg='8' sm='12'>
-          <ScatterChart
+          {/* <ScatterChart
             labelColor={labelColor}
             tooltipShadow={tooltipShadow}
             gridLineColor={gridLineColor}
             primary={colors.primary.main}
             yellowColor={yellowColor}
             successColorShade={successColorShade}
-          />
+          /> */}
         </Col>
         <Col sm='12'>
-          <AreaChart
+          {/* <AreaChart
             labelColor={labelColor}
             tooltipShadow={tooltipShadow}
             gridLineColor={gridLineColor}
             blueColor={blueColor}
             blueLightColor={blueLightColor}
             greyLightColor={greyLightColor}
-          />
+          /> */}
         </Col>
       </Row>
     </Fragment>

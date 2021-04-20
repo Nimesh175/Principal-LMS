@@ -146,23 +146,7 @@ const BlogEdit = () => {
                 </Media> */}
                 <Form className='mt-2' onSubmit={e => e.preventDefault()}>
                   <Row>
-                    {/* <Col md='6'> */}
-                      {/* <FormGroup className='mb-2'> */}
-                        {/* <Label for='blog-edit-title'>Teachers</Label> */}
-                        {/* <Input id='blog-edit-title' value={title} onChange={e => setTitle(e.target.value)} /> */}
-                        {/* <Select
-                          id='tasks-assignees'
-                          className='react-select'
-                          classNamePrefix='select'
-                          isClearable={false}
-                          options={assigneeOptions}
-                          theme={selectThemeColors}
-                          value={assignee}
-                          onChange={data => setAssignee(data)}
-                          components={{ Option: AssigneeComponent }}
-                        /> */}
-                      {/* </FormGroup> */}
-                    {/* </Col> */}
+                   
                     <Col md='6'>
                       <FormGroup className='mb-2'>
                         <Label for='blog-edit-category'>Subjects</Label>
@@ -173,74 +157,10 @@ const BlogEdit = () => {
                           // value={blogCategories}mathematics
                           isMulti
                           name='colors'
-                          // options={categories}
-                          // className='react-select'
-                          // classNamePrefix='select'
                           onChange={data => setBlogCategories(data)}
                         />
                       </FormGroup>
                     </Col>
-                    {/* <Col md='6'>
-                      <FormGroup className='mb-2'>
-                        <Label for='blog-edit-slugs'>Slug</Label>
-                        <Input id='blog-edit-slugs' value={slug} onChange={e => setSlug(e.target.value)} />
-                      </FormGroup>
-                    </Col> */}
-                    {/* <Col md='6'>
-                      <FormGroup className='mb-2'>
-                        <Label for='blog-edit-status'>Status</Label>
-                        <Input
-                          type='select'
-                          id='blogs-edit-status'
-                          value={status}
-                          onChange={e => setStatus(e.target.value)}
-                        >
-                          <option value='Published'>Published</option>
-                          <option value='Pending'>Pending</option>
-                          <option value='Draft'>Draft</option>
-                        </Input>
-                      </FormGroup>
-                    </Col> */}
-                    {/* <Col sm='12'>
-                      <FormGroup className='mb-2'>
-                        <Label>Content</Label>
-                        <Editor editorState={content} onEditorStateChange={data => setContent(data)} />
-                      </FormGroup>
-                    </Col>
-                    <Col className='mb-2' sm='12'>
-                      <div className='border rounded p-2'>
-                        <h4 className='mb-1'>Featured Image</h4>
-                        <Media className='flex-column flex-md-row'>
-                          <img
-                            className='rounded mr-2 mb-1 mb-md-0'
-                            src={featuredImg}
-                            alt='featured img'
-                            width='170'
-                            height='110'
-                          />
-                          <Media body>
-                            <small className='text-muted'>Required image resolution 800x400, image size 10mb.</small>
-
-                            <p className='my-50'>
-                              <a href='/' onClick={e => e.preventDefault()}>
-                                {`C:/fakepath/${imgPath}`}
-                              </a>
-                            </p>
-                            <div className='d-inline-block'>
-                              <FormGroup className='mb-0'>
-                                <CustomInput
-                                  type='file'
-                                  id='exampleCustomFileBrowser'
-                                  name='customFile'
-                                  onChange={onChange}
-                                  accept='.jpg, .png, .gif'
-                                />
-                              </FormGroup>
-                            </div>
-                          </Media>
-                        </Media>
-                      </div>
-                    </Col> */}
                     <br/>
                     <Col className='mt-50'  style={{position: 'relative', top: 15}}>
                       <Button.Ripple color='primary' className='mr-1'>
@@ -258,23 +178,15 @@ const BlogEdit = () => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell style={{fontSize: 20, fontWeight: 'bold'}}>Subjects</TableCell>
-            {/* <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
+            <TableCell style={{fontSize: 20, fontWeight: 'bold', color : 'rgba(0,0,0,0.6)'}}>Subjects</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell style={{fontSize: 15, fontFamily: "revert" }} component="th" scope="row">
+              <TableCell style={{fontSize: 14, fontFamily: "revert" }} component="th" scope="row">
                 {row.name}
               </TableCell>
-              {/* <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
