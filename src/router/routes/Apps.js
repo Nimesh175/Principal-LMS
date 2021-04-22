@@ -146,6 +146,15 @@ const AppRoutes = [
   {
     path: '/dashboard/main',
     component: lazy(() => import('../../views/dashboard/analytics/index'))
+  },
+  {
+    path: '/apps/managenotifucations/view',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managenotifucations/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
   }
 ]
 

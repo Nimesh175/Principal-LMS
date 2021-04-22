@@ -6,6 +6,7 @@ import auth from './auth'
 import navbar from './navbar'
 import layout from './layout'
 import chat from '@src/views/apps/chat/store/reducer'
+import Notification from '@src/views/apps/managenotifucations/store/reducer'
 import todo from '@src/views/apps/todo/store/reducer'
 import subject from '@src/views/apps/subject/store/reducer'
 import users from '@src/views/apps/user/store/reducer'
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
   layout,
   invoice,
   calendar,
-  dataTables
+  dataTables,
+  Notification
 })
 
 export default rootReducer
