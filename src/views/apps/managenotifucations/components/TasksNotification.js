@@ -4,8 +4,7 @@ import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import './styles/task.css'
 import { Media, Button, Form, FormGroup, Label, Input, FormText, Table, Dropdown, DropdownToggle, DropdownMenu, DropdownItem   } from 'reactstrap'
-import RowData from './RowData'
-import TaskNotifications from './TasksNotification'
+import RowData from './RowDataNotification'
 import { Lock, Edit, Trash2, FilePlus } from 'react-feather'
 import Select, { components } from 'react-select'
 import htmlToDraft from 'html-to-draftjs'
@@ -16,7 +15,7 @@ import { selectThemeColors, isObjEmpty } from '@utils'
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
-const Tasks = props => {
+const TaskNotifications = props => {
 
   const state = useSelector(state => state.Notification)
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -60,6 +59,8 @@ const Tasks = props => {
    const [gradeLetter, setGradeLetter] = useState({})
    const [isGradeChecked, setIsGradeChecked] = useState(false)
    const [isClassChecked, setIsClassChecked] = useState(false)
+   const [isTeacherChecked, setIsTeacherChecked] = useState(true)
+   const [isStudentChecked, setIsStudentsChecked] = useState(false)
 
       useEffect(() => {
         setGrade({})
@@ -157,12 +158,10 @@ const Tasks = props => {
   }
 
   return (
-    <div className='todo-app-list overflow-auto'>
-      <div className='app-fixed-search d-flex align-items-center'>
-          <div className="bg-white myStyle__container col-12 p-2">
+          <>
                 {/* [UPDATES] */}
-                 {state.toggleNavClasses  ? <div className="col-12">
-                    <h4>Manage Activities</h4>
+                  <div className="col-12">
+                    <h4>Manage Notifications</h4>
                     <div className="myStyle__hr mt-1 mb-1"></div>
 
                     {/* input Container */}
@@ -170,7 +169,26 @@ const Tasks = props => {
                          <div className="col-12 px-2">
                          {/* grade */}
                           <div className=" pb-1 " > 
+                          {/* Recipients of the Message */}
                           <FormGroup className="col-12 mb-1">
+                            <Label for='gradeManageLesson' className="text-primary">Recipients of the Message</Label> 
+
+                           <Form className="mt-1 mb-1">
+                              <FormGroup check inline  className="col-3">
+                                <Label check>
+                                  <Input type="checkbox"color="primary"  checked={isTeacherChecked} onChange={ () => setIsTeacherChecked(!isTeacherChecked)}/>  Teachers
+                                </Label>
+                              </FormGroup>
+                              <FormGroup check inline className="col-4">
+                                <Label check>
+                                  <Input type="checkbox" color="primary"  checked={isStudentChecked} onChange={() => setIsStudentsChecked(!isStudentChecked)} /> Students
+                                </Label>
+                              </FormGroup>
+                            </Form>
+                          </FormGroup>
+
+                          {/* Grade */}
+                            {isStudentChecked ? <FormGroup className="col-12 mb-1">
                             <Label for='gradeManageLesson' className="text-primary">Grade</Label> 
 
                            <Form className="mt-1 mb-1">
@@ -185,7 +203,6 @@ const Tasks = props => {
                                 </Label>
                               </FormGroup>
                             </Form>
-
                          
                           <div className="row">
                           <div className="col-7 ">
@@ -224,7 +241,7 @@ const Tasks = props => {
                                 />
                            </div>
                           </div>
-                          </FormGroup>                     
+                          </FormGroup>  : null}                   
                           </div>
 
                           <div className="border-bottom mb-1 mx-1"></div>
@@ -264,11 +281,10 @@ const Tasks = props => {
                         </tbody>
                       </Table>
                     </div>
-                </div> :  <TaskNotifications /> }
-          </div>
-      </div>  
-    </div>
+                </div>
+          </>  
+    
   )
 }
 
-export default Tasks
+export default TaskNotifications

@@ -23,6 +23,9 @@ const RowData = ({title = "", description = "",  date = "01/01/2021", more = nul
                          color="none">
                            <p  className="text-primary"> <Eye size={20} /></p>
                               <Tooltip placement="top" className="bg-warning" isOpen={tooltipOpen} autohide={false} target="DisabledAutoHideExample" toggle={toggle}>
+                                   
+                                   <p className="text-primary">Recipients : </p>
+                                        <p>Teachers, Student</p>
                                    <p className="text-primary">grades : </p>
                                         <p>All</p>
                                    <p className="text-primary">classes : </p>
