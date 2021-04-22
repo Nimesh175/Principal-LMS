@@ -1,5 +1,9 @@
 
-import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS} from '../actionTypes/manageNotificationTypes'
+import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
+  TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY,
+   SET_TABLE_ROW_DETAILS,
+    RESET_TABLE_ROW_DETAILS
+  } from '../actionTypes/manageNotificationTypes'
 // ** Initial State
 const initialState = {
   tasks: [],
@@ -12,6 +16,7 @@ const initialState = {
   },
 
   toggleNavClasses : true,
+  toggleNavInboxClasses : false,
   rowDataObject : {title : "", description : "", file : null}
 }
 
@@ -19,6 +24,9 @@ const NotificationReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_NAV_BETWEEN_CONTENT_LESSON:
       return { ...state, toggleNavClasses : action.task }
+    
+    case TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY:
+      return { ...state, toggleNavInboxClasses : action.task }
 
     case SET_TABLE_ROW_DETAILS:
         return { ...state, rowDataObject : action.task } 

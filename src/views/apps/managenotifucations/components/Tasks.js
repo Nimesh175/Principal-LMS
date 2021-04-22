@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import './styles/task.css'
-import { Media, Button, Form, FormGroup, Label, Input, FormText, Table, Dropdown, DropdownToggle, DropdownMenu, DropdownItem   } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Table  } from 'reactstrap'
 import RowData from './RowData'
 import TaskNotifications from './TasksNotification'
-import { Lock, Edit, Trash2, FilePlus } from 'react-feather'
+import TasksMyInbox from './TasksMyInbox'
 import Select, { components } from 'react-select'
 import htmlToDraft from 'html-to-draftjs'
-import { Editor } from 'react-draft-wysiwyg'
 import { EditorState, ContentState } from 'draft-js'
 import { selectThemeColors, isObjEmpty } from '@utils'
 
@@ -68,15 +67,6 @@ const Tasks = props => {
         setIsClassChecked(false)
       }, [state.toggleNavClasses])
    
-   // ** Function to change user image
-   const onChange = e => {
-     const reader = new FileReader(),
-       files = e.target.files
-     reader.onload = function () {
-       setImg(reader.result)
-     }
-     reader.readAsDataURL(files[0])
-   }
 
   const dataObjArray = [
     {title : "An Apple", date : "20/03/2021", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", more : null},
@@ -157,11 +147,11 @@ const Tasks = props => {
   }
 
   return (
-    <div className='todo-app-list overflow-auto'>
-      <div className='app-fixed-search d-flex align-items-center'>
+    <div className='todo-app-list overflow-auto  '>
+      <div className='app-fixed-search d-flex align-items-center  '>
           <div className="bg-white myStyle__container col-12 p-2">
                 {/* [UPDATES] */}
-                 {state.toggleNavClasses  ? <div className="col-12">
+                 {!state.toggleNavInboxClasses ? state.toggleNavClasses  ? <div className="col-12">
                     <h4>Manage Activities</h4>
                     <div className="myStyle__hr mt-1 mb-1"></div>
 
@@ -171,7 +161,7 @@ const Tasks = props => {
                          {/* grade */}
                           <div className=" pb-1 " > 
                           <FormGroup className="col-12 mb-1">
-                            <Label for='gradeManageLesson' className="text-primary">Grade</Label> 
+                            <Label for='gradeManageLesson' className="text-primary mt-1">Grade</Label> 
 
                            <Form className="mt-1 mb-1">
                               <FormGroup check inline  className="col-3">
@@ -264,7 +254,7 @@ const Tasks = props => {
                         </tbody>
                       </Table>
                     </div>
-                </div> :  <TaskNotifications /> }
+                </div> :  <TaskNotifications /> : <TasksMyInbox />}
           </div>
       </div>  
     </div>

@@ -1,4 +1,4 @@
-import { Mail, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Briefcase} from 'react-feather'
+import { Mail, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Briefcase, Bell} from 'react-feather'
 
 export default [
   
@@ -72,5 +72,11 @@ export default [
           }
           
         ]
+      },
+      {
+        id: 'notification',
+        title: 'Notifications',
+        icon: <Bell size={20} />,
+        navLink: '/apps/managenotifucations/view'
       }
 ]

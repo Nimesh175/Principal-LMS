@@ -1,6 +1,6 @@
 // ** React Imports
 import { Link } from 'react-router-dom'
-import {toggleNavBeeetweenSubject_Content, resetTableRowDetails} from '../store/actions/index'
+import {toggleNavBeeetweenSubject_Content, resetTableRowDetails, toggleNavBeeetweenInbox_ManageNotification} from '../store/actions/index'
 
 
 import { useSelector } from 'react-redux'
@@ -35,9 +35,10 @@ const TodoSidebar = props => {
                   action
                   tag={Link}
                   to={'/apps/managenotifucations/view'}
-                  active={state.toggleNavClasses}
+                  active={state.toggleNavClasses && !state.toggleNavInboxClasses}
                   onClick={() => {
                     dispatch(toggleNavBeeetweenSubject_Content(true))
+                    dispatch(toggleNavBeeetweenInbox_ManageNotification(false))
                     dispatch(resetTableRowDetails())
                   }}
                 >
@@ -47,10 +48,11 @@ const TodoSidebar = props => {
 
                 <ListGroupItem
                   tag={Link}
-                  to={'/apps/managenotifucations/view/content'}
-                  active={ !state.toggleNavClasses}
+                  to={'/apps/managenotifucations/view'}
+                  active={ !state.toggleNavClasses  && !state.toggleNavInboxClasses}
                   onClick={() => {
                     dispatch(toggleNavBeeetweenSubject_Content(false))
+                    dispatch(toggleNavBeeetweenInbox_ManageNotification(false))
                     dispatch(resetTableRowDetails())
                   }}
                   action
@@ -58,18 +60,19 @@ const TodoSidebar = props => {
                   <Folder className='mr-75' size={18} />
                   <span className='align-middle'>Manage Notifications</span>
                 </ListGroupItem>
+                
                 <ListGroupItem
                   tag={Link}
-                  to={'/apps/managenotifucations/view/inbox'}
-                  active={ !state.toggleNavClasses}
+                  to={'/apps/managenotifucations/view'}
+                  active={ state.toggleNavInboxClasses}
                   onClick={() => {
-                    dispatch(toggleNavBeeetweenSubject_Content(false))
+                    dispatch(toggleNavBeeetweenInbox_ManageNotification(true))
                     dispatch(resetTableRowDetails())
                   }}
                   action
                 >
                   <Folder className='mr-75' size={18} />
-                  <span className='align-middle'>My Inbox</span>
+                  <span className='align-middle'>Inbox</span>
                 </ListGroupItem>
                
               </ListGroup>

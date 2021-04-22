@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import './styles/task.css'
+import './styles/taskNotification.css'
 import { Media, Button, Form, FormGroup, Label, Input, FormText, Table, Dropdown, DropdownToggle, DropdownMenu, DropdownItem   } from 'reactstrap'
 import RowData from './RowDataNotification'
 import { Lock, Edit, Trash2, FilePlus } from 'react-feather'
@@ -150,7 +150,6 @@ const TaskNotifications = props => {
     return (
       <components.Option {...props}>
         <div className='d-flex flex-wrap align-items-center'>
-          {/* <Avatar className='my-0 mr-1' size='sm'  /> */}
           <div>{data.label}</div>
         </div>
       </components.Option>
@@ -165,13 +164,13 @@ const TaskNotifications = props => {
                     <div className="myStyle__hr mt-1 mb-1"></div>
 
                     {/* input Container */}
-                    <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
+                    <div className="col-12 bg-white myupperContent rounded mr-1 mb-2 shadow py-1">
                          <div className="col-12 px-2">
                          {/* grade */}
                           <div className=" pb-1 " > 
                           {/* Recipients of the Message */}
                           <FormGroup className="col-12 mb-1">
-                            <Label for='gradeManageLesson' className="text-primary">Recipients of the Message</Label> 
+                            <Label for='gradeManageLesson' className="text-primary mt-1">Recipients of the Message</Label> 
 
                            <Form className="mt-1 mb-1">
                               <FormGroup check inline  className="col-3">
@@ -188,7 +187,7 @@ const TaskNotifications = props => {
                           </FormGroup>
 
                           {/* Grade */}
-                            {isStudentChecked ? <FormGroup className="col-12 mb-1">
+                            {isStudentChecked ? <FormGroup className="col-12 pb-1">
                             <Label for='gradeManageLesson' className="text-primary">Grade</Label> 
 
                            <Form className="mt-1 mb-1">
@@ -264,7 +263,7 @@ const TaskNotifications = props => {
                     </div>
 
               {/* table container */}
-                    <div className="bg-white row mt-2 rounded mr-1 shadow px-1 overflow-auto myTableContainer ">
+                    <div className="bg-white row col-12 mt-2 rounded mr-1 shadow px-1 overflow-auto myTableContainer ">
                     <Table size="sm" hover >
                         <thead>
                           <tr>

@@ -1,9 +1,20 @@
-import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS} from '../actionTypes/manageNotificationTypes'
+import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
+   SET_TABLE_ROW_DETAILS,
+    RESET_TABLE_ROW_DETAILS,
+     TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY
+    } from '../actionTypes/manageNotificationTypes'
 
 // ** [UPDATED]
 export const toggleNavBeeetweenSubject_Content = bool => {
   return {
       type : TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
+      task : bool
+    }
+}
+// ** [UPDATED]
+export const toggleNavBeeetweenInbox_ManageNotification = bool => {
+  return {
+      type : TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY,
       task : bool
     }
 }
